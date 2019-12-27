@@ -1,0 +1,38 @@
+.header {
+     position: relative;
+     display: -ms-flexbox;
+     display: flex;
+     -ms-flex-wrap: wrap;
+     flex-wrap: wrap;
+     -ms-flex-direction: column;
+     flex-direction: column;
+     -ms-flex-pack: center;
+     justify-content: center;
+     min-height: 350px;
+     padding-top: 4rem;
+     padding-bottom: 4rem;
+     color: #fff;
+     background-color: #607D8B;
+     text-align: center
+}
+
+h1 {
+     font-size: 3.5rem;
+     font-weight: 300;
+     line-height: 1.1;
+}
+
+.header h1 a {
+     color: #fff;
+     text-decoration: none;
+}
+
+.header p {
+     letter-spacing: 1px;
+}
+
+#contact .card:hover i,
+#contact .card:hover h4 {
+     color: #007bff;
+     transition: all .5s ease-in-out;
+}

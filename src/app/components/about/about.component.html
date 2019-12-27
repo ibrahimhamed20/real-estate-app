@@ -1,0 +1,13 @@
+<app-header [hideSlider]="1"></app-header>
+<div class="section" id="b-section-header" name="Header">
+     <div class="widget Header" data-version="2" id="Header1">
+          <div class="header image-placement-behind no-image">
+               <div class="container">
+                    <h1><a>{{infoObj.about_title}}</a></h1>
+                    <p><strong>{{infoObj.about_hint}}</strong></p>
+               </div>
+          </div>
+     </div>
+</div>
+<div class="about-section my-5" [innerHTML]="htmlcontent"></div>
+<app-footer></app-footer>

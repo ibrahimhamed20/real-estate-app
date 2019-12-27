@@ -1,0 +1,179 @@
+<admin-navbar></admin-navbar>
+<br>
+<h1 class="text-center">بيانات العقارات</h1>
+<br>
+
+<section class="products" dir="rtl">
+     <div class="container">
+          <div class="text-right">
+               <button class="btn btn-primary pull-right mb-2" (click)="openModal(content, data);">
+                    <i class="fa fa-plus-circle fa-lg"></i> إضافة
+               </button>
+          </div>
+          <!-- Table of Products -->
+          <table class="table table-bordered table-striped" [mfData]="products" #mf="mfDataTable" [mfRowsOnPage]="5">
+               <thead>
+                    <tr>
+                         <th class="text-center" style="width: 10%">
+                              <mfDefaultSorter by="id">الكود</mfDefaultSorter>
+                         </th>
+                         <th class="text-center" style="width: 20%">
+                              <mfDefaultSorter by="name">الاسم</mfDefaultSorter>
+                         </th>
+                         <th class="text-center" style="width: 20%">
+                              <mfDefaultSorter by="main_image">الصورة</mfDefaultSorter>
+                         </th>
+                         <th class="text-center" style="width: 10%">
+                              <mfDefaultSorter by="price">السعر</mfDefaultSorter>
+                         </th>
+                         <th class="text-center" style="width: 25%">
+                              <mfDefaultSorter by="addresss">عنوان العقار</mfDefaultSorter>
+                         </th>
+                         <th class="text-center" style="width: 15%">
+                              <mfDefaultSorter by="controls">تعديل</mfDefaultSorter>
+                         </th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr *ngFor="let product of mf.data; index as i;">
+                         <td class="text-center">{{product.id}}</td>
+                         <td class="text-center">{{product.name}}</td>
+                         <td class="text-center">
+                              <img src="{{product.main_image}}" class="mx-auto d-block img-thumbnail" alt="" />
+                         </td>
+                         <td class="text-center">{{product.price}}</td>
+                         <td class="text-center">{{product.address}}</td>
+                         <td class="text-center">
+                              <i class="btn btn-info fa fa-pencil mx-1" (click)="openModal(content, product);" style="padding: 0px 7px;"
+                                   aria-hidden="true"></i>
+                              <i class="btn btn-danger fa fa-trash mx-1" (click)="deleteProducts(product.id)" style="padding: 0px 7px;"
+                                   aria-hidden="true"></i>
+                         </td>
+                    </tr>
+               </tbody>
+               <tfoot>
+                    <tr>
+                         <td colspan="5" class="pb-0">
+                              <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15,20]"></mfBootstrapPaginator>
+                         </td>
+                    </tr>
+               </tfoot>
+          </table>
+
+     </div>
+</section>
+
+
+<ng-template #content let-modal>
+     <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">إضافة / تعديل عقار</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+               <span aria-hidden="true">&times;</span>
+          </button>
+     </div>
+     <div class="modal-body text-right" dir="rtl">
+          <form [formGroup]="productForm">
+               <div class="row">
+                    <div class="col-md-6">
+                         <div class="form-group">
+                              <label for="name">اسم العقار</label>
+                              <div class="input-group">
+                                   <input id="name" type="text" class="form-control" placeholder="ادخل اسم العقار"
+                                        formControlName="name">
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-md-6">
+                         <div class="form-group">
+                              <label for="price">السعر</label>
+                              <div class="input-group">
+                                   <input id="price" type="number" class="form-control" placeholder="اكتب سعر العقار"
+                                        formControlName="price">
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-6">
+                         <div class="form-group">
+                              <label for="short_desc">وصف قصير عن العقار</label>
+                              <div class="input-group">
+                                   <input id="short_desc" type="text" class="form-control" placeholder="ادخل اسم المنتج"
+                                        formControlName="short_desc">
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-md-6">
+                         <div class="form-group">
+                              <label for="main_img">رفع صورة رئيسية للمنتج</label>
+                              <div class="input-group">
+                                   <input id="main_img" type="file" class="form-control" placeholder="رفع صورة"
+                                        (change)="handleFileInput($event.target.files, 1)">
+                                   <input type="hidden" name="fileHidden" formControlName="main_image" />
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col">
+                         <div class="form-group">
+                              <label for="long_desc">تفاصيل العقار</label>
+                              <div class="input-group">
+                                   <textarea id="long_desc" class="form-control" rows="5" placeholder="يرجي كتابة تفاصيل العقار"
+                                        formControlName="long_desc"></textarea>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-4">
+                         <div class="form-group">
+                              <label for="img1">رفع صورة 1</label>
+                              <div class="input-group">
+                                   <input id="img1" type="file" class="form-control" placeholder="رفع صورة" (change)="handleFileInput($event.target.files, 2)">
+                                   <input type="hidden" name="fileHidden" formControlName="img_temp1" />
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="form-group">
+                              <label for="img2">رفع صورة 2</label>
+                              <div class="input-group">
+                                   <input id="img2" type="file" class="form-control" placeholder="رفع صورة" (change)="handleFileInput($event.target.files, 3)">
+                                   <input type="hidden" name="fileHidden" formControlName="img_temp2" />
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="form-group">
+                              <label for="img3">رفع صورة 3</label>
+                              <div class="input-group">
+                                   <input id="img3" type="file" class="form-control" placeholder="رفع صورة" (change)="handleFileInput($event.target.files, 4)">
+                                   <input type="hidden" name="fileHidden" formControlName="img_temp3" />
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-4">
+                         <label for="owner_name">اسم المعلن عن العقار</label>
+                         <input id="owner_name" type="text" class="form-control" placeholder="ادخل اسم المعلن"
+                              formControlName="owner_name">
+                    </div>
+                    <div class="col-md-4">
+                         <label for="owner_phone">رقم هاتف المعلن</label>
+                         <input id="owner_phone" type="text" class="form-control" placeholder="ادخل رقم هاتف المعلن"
+                              formControlName="owner_phone">
+                    </div>
+                    <div class="col-md-4">
+                         <label for="address">عنوان العقار</label>
+                         <input id="address" type="text" class="form-control" placeholder="ادخل العنوان"
+                              formControlName="address">
+                    </div>
+               </div>
+          </form>
+     </div>
+     <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+     </div>
+</ng-template>

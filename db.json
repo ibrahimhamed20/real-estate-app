@@ -1,0 +1,213 @@
+{
+  "admin": {
+    "userId": 1,
+    "username": "web-admin",
+    "password": "P@$$w0rd",
+    "status": 1
+  },
+  "setting": [
+    {
+      "id": 1,
+      "website_title": "E-Building Blog",
+      "slide1_img": "https://www.w3schools.com/w3images/workbench.jpg",
+      "slide1_title": "",
+      "slide1_desc": "",
+      "slide2_img": "https://www.w3schools.com/w3images/coffee.jpg",
+      "slide2_title": "",
+      "slide2_desc": "",
+      "slide3_img": "https://www.w3schools.com/w3images/sound.jpg",
+      "slide3_title": "",
+      "slide3_desc": ""
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "عقار 23",
+      "price": 1324,
+      "main_image": "../../../assets/img/any.jpg",
+      "short_desc": "هذا مثال لنص يجب الاحاطة انه سيتم وضعه هنا لوصف العقار.",
+      "long_desc": "هذا مثال لنص يجب الاحاطة انه سيتم وضعه هنا لوصف العقار.",
+      "img_temp1": "",
+      "img_temp2": "",
+      "img_temp3": "",
+      "img_temp4": null,
+      "newFlag": "1"
+    },
+    {
+      "id": 2,
+      "name": "عقار 56",
+      "price": 4563,
+      "main_image": "../../../assets/img/any.jpg",
+      "short_desc": "هذا مثال لنص يجب الاحاطة انه سيتم وضعه هنا لوصف العقار.",
+      "long_desc": "هذا مثال لنص يجب الاحاطة انه سيتم وضعه هنا لوصف العقار.",
+      "img_temp1": "",
+      "img_temp2": "",
+      "img_temp3": "",
+      "new": 1
+    },
+    {
+      "id": 3,
+      "name": "عقار 87",
+      "price": 1390,
+      "main_image": "../../../assets/img/any.jpg",
+      "short_desc": "هذا مثال لنص يجب الاحاطة انه سيتم وضعه هنا لوصف العقار.",
+      "long_desc": "هذا مثال لنص يجب الاحاطة انه سيتم وضعه هنا لوصف العقار.",
+      "img_temp1": "",
+      "img_temp2": "",
+      "img_temp3": "",
+      "new": 0
+    },
+    {
+      "id": 4,
+      "name": "عقار 46",
+      "price": 1873,
+      "main_image": "../../../assets/img/any.jpg",
+      "short_desc": "هذا مثال لنص يجب الاحاطة انه سيتم وضعه هنا لوصف العقار.",
+      "long_desc": "هذا مثال لنص يجب الاحاطة انه سيتم وضعه هنا لوصف العقار.",
+      "img_temp1": "",
+      "img_temp2": "",
+      "img_temp3": "",
+      "new": 0
+    },
+    {
+      "id": 5,
+      "name": "عقار 12",
+      "price": 1932,
+      "main_image": "../../../assets/img/any.jpg",
+      "short_desc": "هذا مثال لنص يجب الاحاطة انه سيتم وضعه هنا لوصف العقار.",
+      "long_desc": "هذا مثال لنص يجب الاحاطة انه سيتم وضعه هنا لوصف العقار.",
+      "img_temp1": "",
+      "img_temp2": "",
+      "img_temp3": "",
+      "new": 1
+    },
+    {
+      "id": 6,
+      "name": "Ibrahim",
+      "price": 123,
+      "main_image": "",
+      "short_desc": "bjgh bfghg ntghb fgh fggf",
+      "long_desc": "fghghh fgfgfhg fghgh fghfgnb fghfghbb fgyghfhghg",
+      "img_temp1": "",
+      "img_temp2": "",
+      "img_temp3": "",
+      "img_temp4": null,
+      "newFlag": null
+    },
+    {
+      "id": 7,
+      "name": "vccvcvcv",
+      "price": 123,
+      "main_image": {},
+      "short_desc": "cvcvcvcv",
+      "long_desc": "cvcvcvcv cvvccvvc cvcvvccvvc cvcvvcvcvcv cvvccvvcvc cvvccvvcv cvvcvcvccvv cvvccvvcvc",
+      "img_temp1": {},
+      "img_temp2": {},
+      "img_temp3": {},
+      "img_temp4": null,
+      "newFlag": "1"
+    },
+    {
+      "id": 8,
+      "name": "jjkjkj",
+      "price": 123,
+      "main_image": "06fc90a9-b7a6-48bf-8b20-169a80dc1824.jpg",
+      "short_desc": "jkjkjkjk",
+      "long_desc": "kjjkjkjkkj",
+      "img_temp1": null,
+      "img_temp2": null,
+      "img_temp3": null,
+      "img_temp4": null,
+      "newFlag": "1"
+    },
+    {
+      "id": 9,
+      "name": "jhnjhjhjh",
+      "price": 123,
+      "main_image": "06fc90a9-b7a6-48bf-8b20-169a80dc1824.jpg",
+      "short_desc": "jhjhjh",
+      "long_desc": "jhjhjhjh",
+      "img_temp1": null,
+      "img_temp2": null,
+      "img_temp3": null,
+      "img_temp4": null,
+      "newFlag": "1"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "أخر التصميمات العصرية",
+      "short_desc": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "image": "../../../assets/img/slider-1.jpg",
+      "author": null,
+      "content": "<b>هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.</b>",
+      "regDate": "2019-10-22T11:37:39.554Z"
+    },
+    {
+      "id": 2,
+      "title": "عقارات فى المدن الحديثة",
+      "short_desc": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "content": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "image": "../../../assets/img/slider-2.jpg",
+      "reg_date": "26 يناير 2018",
+      "new": 0
+    },
+    {
+      "id": 3,
+      "title": "بناء بيت المستقبل",
+      "short_desc": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "content": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "image": "../../../assets/img/slider-3.jpg",
+      "reg_date": "04 يونيو 2018",
+      "new": 1
+    },
+    {
+      "id": 4,
+      "title": "بناء بيت المستقبل",
+      "short_desc": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "content": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "image": "../../../assets/img/slider-3.jpg",
+      "reg_date": "13 اكتوبر 2018",
+      "new": 0
+    },
+    {
+      "id": 5,
+      "title": "عقارات فى المدن الحديثة",
+      "short_desc": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "image": "../../../assets/img/slider-2.jpg",
+      "author": null,
+      "content": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "regDate": "2019-10-22T11:37:49.514Z"
+    },
+    {
+      "id": 6,
+      "title": "أخر التصميمات العصرية",
+      "short_desc": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "content": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "image": "../../../assets/img/slider-1.jpg",
+      "reg_date": "09 فبراير 2018",
+      "new": 0
+    },
+    {
+      "id": 7,
+      "title": "Nothing",
+      "short_desc": "هذا مثال نصي لجزء بسيط من المقال الذي سيتم عرضه بعد ذلك هنا ان شاء الله.",
+      "content": "<b>ghhgghhggh</b><div><ul><li><b>jkkjkjjk</b></li><li><b>jhjjhjhjh</b></li><li><b>njjkjjkkj</b></li><li><b>jkjkjkjjk</b></li></ul><div><img src=\"http://via.placeholder.com/800x600\"></div></div>",
+      "image": "../../../assets/img/slider-1.jpg",
+      "reg_date": "09 فبراير 2018",
+      "new": 1
+    },
+    {
+      "id": 8,
+      "title": "كطكطكطك",
+      "short_desc": "نمنمكمكمك",
+      "image": "C:\\fakepath\\coastal-stars.jpg",
+      "author": "تنتنتنتن",
+      "content": "<b>ghhgghhggh</b><div><ul><li><b>jkkjkjjk</b></li><li><b>jhjjhjhjh</b></li><li><b>njjkjjkkj</b></li><li><b>jkjkjkjjk</b></li></ul><div><img src=\"http://via.placeholder.com/800x600\"></div></div>",
+      "regDate": "2019-10-20T12:57:58.872Z",
+      "new": 0
+    }
+  ]
+}

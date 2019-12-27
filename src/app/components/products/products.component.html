@@ -1,0 +1,26 @@
+<app-header></app-header>
+<!--============================ products ============================-->
+<div class="container products" dir="rtl">
+     <div class="row align-items-center py-3">
+          <h3 class="col-md-6 col-sm-12 text-right h3-col"><i class="fa fa-building-o" aria-hidden="true"></i> قائمة
+               العقارات
+          </h3>
+     </div>
+     <!-- first row -->
+     <div class="row">
+          <div class="col-md-4" *ngFor="let product of products">
+               <div class="card mb-4">
+                    <img class="card-img-top" src="{{product.main_image}}" alt="Card image cap">
+                    <span class="available" *ngIf="product.new == 1">جديد</span>
+                    <div class="card-body">
+                         <h5 class="card-title text-center text-orange">{{product.name}}</h5>
+                         <p class="text-center">{{product.short_desc}}</p>
+                         <hr>
+                         <a (click)="gotoDetailPage(product)" class="box_btn">تفاصيل العقار</a>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+<!-- /.products -->
+<app-footer></app-footer>

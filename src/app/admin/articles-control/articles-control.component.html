@@ -1,0 +1,120 @@
+<admin-navbar></admin-navbar>
+<br>
+<h1 class="text-center">بيانات المقالات</h1>
+<br>
+
+<section class="products" dir="rtl">
+    <div class="container">
+        <div class="text-right">
+            <button class="btn btn-primary pull-right mb-2" (click)="openModal(content, data);">
+                <i class="fa fa-plus-circle fa-lg"></i> إضافة
+            </button>
+        </div>
+        <!-- Table of Products -->
+        <table class="table table-bordered table-striped" [mfData]="articles" #mf="mfDataTable" [mfRowsOnPage]="5">
+            <thead>
+                <tr>
+                    <th class="text-center" style="width: 10%">
+                        <mfDefaultSorter by="id">الكود</mfDefaultSorter>
+                    </th>
+                    <th class="text-center" style="width: 15%">
+                        <mfDefaultSorter by="image">الصورة</mfDefaultSorter>
+                    </th>
+                    <th class="text-center" style="width: 15%">
+                        <mfDefaultSorter by="title">العنوان</mfDefaultSorter>
+                    </th>
+                    <th class="text-center" style="width: 40%">
+                        <mfDefaultSorter by="desc">الوصف</mfDefaultSorter>
+                    </th>
+                    <th class="text-center" style="width: 20%">
+                        <mfDefaultSorter by="controls">اعدادات</mfDefaultSorter>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let article of mf.data; index as i;">
+                    <td class="text-center">{{article.id}}</td>
+                    <td class="text-center">
+                        <img src="{{article.image}}" class="mx-auto d-block img-thumbnail" alt="" />
+                    </td>
+                    <td class="text-center">{{article.title}}</td>
+                    <td class="text-center">{{article.short_desc}}</td>
+                    <td class="text-center">
+                        <i class="btn btn-info fa fa-pencil mx-1" (click)="openModal(content, article);" style="padding: 0px 7px;"
+                            aria-hidden="true"></i>
+                        <i class="btn btn-danger fa fa-trash mx-1" (click)="deleteArticles(article.id)" style="padding: 0px 7px;"
+                            aria-hidden="true"></i>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" class="pb-0">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15,20]"></mfBootstrapPaginator>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+</section>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">إضافة / تعديل مقال</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body text-right" dir="rtl">
+        <form [formGroup]="articleForm">
+            <div class="form-group">
+                <label for="title">عنوان المقال</label>
+                <div class="input-group">
+                    <input id="name" type="text" class="form-control" placeholder="ادخل عنوان المقال" formControlName="title">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="desc">وصف قصير</label>
+                <div class="input-group">
+                    <input type="text" id="desc" class="form-control" formControlName="short_desc" placeholder="من فضلك اكتب وصف قصير لجذب القراء." />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="image">رفع صورة</label>
+                <div class="input-group">
+                    <input type="file" id="image" class="form-control" (change)="fileProgress($event)" placeholder="من فضلك صورة معبرة للمقال." />
+                    <input type="hidden" name="fileHidden" formControlName="image" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="desc">مؤلف المقال</label>
+                <div class="input-group">
+                    <input type="text" id="desc" class="form-control" formControlName="author" placeholder="من فضلك اكتب سم مؤلف المقال." />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="content">محتوي المقال</label>
+                <div class="input-group">
+                    <app-ngx-editor [config]="editorConfig" [spellcheck]="true" formControlName="content">
+                    </app-ngx-editor>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+    </div>
+</ng-template>
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="tab-image-list tab-content pr-0">
+                <div class="tab-pane fade show active">
+                    <div #image class="image-wrapper"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

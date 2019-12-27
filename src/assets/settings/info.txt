@@ -1,0 +1,13 @@
+[
+     {
+          "data": {
+               "about_title": "من نحن",
+               "about_hint": "نسعي للأفضل دائما",
+               "contact_title": "تواصل معنا",
+               "contact_hint": "نحن بإنتظارك دائما",
+               "home_page_title": "عقارات دوت كوم فى كل مكان",
+               "products_page_title": "كل العقارات الموجودة لدينا هنا",
+               "articles_page_title": "مقالاتنا"
+          }
+     }
+]

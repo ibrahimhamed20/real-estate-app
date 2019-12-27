@@ -1,0 +1,31 @@
+<section id="LoginForm" dir="rtl">
+     <div class="container">
+          <div class="login-form">
+               <div class="main-div">
+                    <div class="panel">
+                         <h2>تسجيل الدخول للادمن</h2>
+                         <p>من فضلك قم بادخل اسم المستخدم وكلمة المرور</p>
+                    </div>
+                    <form id="Login" [formGroup]="AuthDataForm" novalidate autocomplete="off">
+                         <div class="form-group">
+                              <input type="text" maxlength="30" autocomplete="off" minlength="5" class="form-control"
+                                   id="inputUsername" placeholder="اسم المستخدم" formControlName="username">
+                         </div>
+
+                         <div class="form-group">
+                              <input type="password" autocomplete="off" class="form-control" id="inputPassword"
+                                   placeholder="كلمة المرور" formControlName="password">
+                         </div>
+                         <div class="forgot">
+                              <a class="btn btn-link" [routerLink]="['/home']">
+                                   عودة للشاشة الرئيسية
+                              </a>
+                         </div>
+                         <button type="submit" class="btn btn-primary" (click)="login()">دخول</button>
+
+                    </form>
+               </div>
+               <p class="botto-text">تم التصميم بواسطة انجزلى لخدمات الويب</p>
+          </div>
+     </div>
+</section>

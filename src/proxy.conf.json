@@ -1,0 +1,6 @@
+{
+    "/api": {
+        "target": "https://eqarat.eg-1.com",
+        "secure": true
+    }
+}

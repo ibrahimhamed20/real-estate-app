@@ -1,0 +1,111 @@
+<app-header [hideSlider]="1"></app-header>
+<div class="section" id="b-section-header" name="Header">
+    <div class="widget Header" data-version="2" id="Header1">
+        <div class="header image-placement-behind no-image">
+            <div class="container">
+                <h1><a>{{articleDetails?.title}}</a></h1>
+                <p>بواسطة <strong>{{articleDetails?.author}}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Content -->
+<div class="container text-right" dir="rtl">
+
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-lg-8">
+
+            <!-- Title -->
+            <h1 class="mt-4">{{articleDetails?.title}}</h1>
+
+            <!-- Author -->
+            <p class="lead">
+                بواسطة
+                <a href="#">{{articleDetails?.author}}</a>
+            </p>
+
+            <hr>
+
+            <!-- Date/Time -->
+            <p>تم النشر في {{articleDetails?.created_at | date: 'fullDate'}}</p>
+
+            <hr>
+
+            <!-- Preview Image -->
+            <img class="card-img-top"
+                src="{{articleDetails?.image}}"
+                alt="Card image cap">
+
+            <hr>
+
+            <!-- Post Content -->
+            <div [innerHTML]="articleDetails?.content"></div>
+
+            <hr>
+
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4 mt-5">
+
+            <!-- Categories Widget -->
+            <div class="card my-3">
+                <h5 class="card-header">#هشتاج ووسوم</h5>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="javascript:void(0)">عقار</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">بناء</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">مدينة</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="javascript:void(0)">أبراج</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">ناطحات</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">بيوت</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Side Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">نبذه مختصرة</h5>
+                <div class="card-body">
+                   {{articleDetails?.short_desc}}
+                </div>
+            </div>
+            <!-- Side Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">صورة مصغرة</h5>
+                <div class="card-body">
+                    <img class="card-img-top"
+                        src="{{articleDetails?.image}}"
+                        alt="Card image cap">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+<app-footer></app-footer>

@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700'); */
+/* import fonts */
+
+@import url('./assets/fonts/fonts.css');
+@import url('./assets/fonts/font-awesome.min.css');
+/* end impport */
+
+/* gerneral css */
+* {
+     font-family: 'Tajawal', sans-serif;
+}
+
+body {
+     font-family: 'Tajawal', sans-serif;
+     font-size: 18px;
+}
+
+.pagination {
+     display: inline-flex !important;
+     padding: 0;
+}
+
+.page-item:first-child .page-link,.page-item:last-child .page-link {
+     border-radius: 0 !important;
+}
+.page-item:first-child .page-link {
+     margin-left: -1px !important;
+}
+
+/* My Repeatable Style properties */
+.updown-padding {
+     padding: 100px 0px;
+}
+
+.title-sec {
+     font-weight: bold;
+     font-size: 36px;
+     margin-bottom: 20px;
+}
+
+.title-sec:after {
+     content: '';
+     display: block;
+     width: 75px;
+     height: 3px;
+     background-color: #ec1c23;
+     margin: 25px auto;
+}
+
+.desc-sec {
+     width: 80%;
+     margin: 0 auto 40px;
+     line-height: 1.75;
+     color: #666;
+}
+
+.table td, .table th {
+     vertical-align: middle !important;
+}

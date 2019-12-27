@@ -1,0 +1,161 @@
+<admin-navbar></admin-navbar>
+<br>
+<h1 class="text-center">اعدادات النظام</h1>
+<br>
+<div class="container text-right">
+    <button class="btn btn-info btn-sm rounded-0" (click)="openModal(content);">تغير بيانات الدخول للوحة التحكم</button>
+</div>
+<hr class="container">
+<div class="container" dir="rtl">
+    <form [formGroup]="settingForm" (ngSubmit)="onSubmit()">
+        <div class="row text-right">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="website_title">اسم الموقع</label>
+                    <div class="input-group">
+                        <input id="website_title" type="text" class="form-control rounded-0"
+                            placeholder="ادخل اسم الموقع" formControlName="website_title">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row text-right">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="slide1_title">عنوان الصورة رقم 1</label>
+                    <div class="input-group">
+                        <input id="slide1_title" type="text" class="form-control rounded-0"
+                            placeholder="ادخل اسم الموقع" formControlName="slide1_title">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="slide1_desc">وصف قصير عن الصورة رقم 1</label>
+                    <div class="input-group">
+                        <input id="slide1_desc" type="text" class="form-control rounded-0" placeholder="ادخل اسم المنتج"
+                            formControlName="slide1_desc">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="slide1_img">رفع الصورة رقم 1</label>
+                    <div class="input-group">
+                        <input id="slide1_img" type="file" class="form-control rounded-0" placeholder="رفع صورة"
+                            (change)="handleFileInput($event.target.files, 1)">
+                        <input type="hidden" name="fileHidden" formControlName="slide1_img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row text-right">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="slide2_title">عنوان الصورة رقم 2</label>
+                    <div class="input-group">
+                        <input id="slide2_title" type="text" class="form-control rounded-0"
+                            placeholder="ادخل اسم الموقع" formControlName="slide2_title">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="slide2_desc">وصف قصير عن الصورة رقم 2</label>
+                    <div class="input-group">
+                        <input id="slide2_desc" type="text" class="form-control rounded-0" placeholder="ادخل اسم المنتج"
+                            formControlName="slide2_desc">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="slide2_img">رفع الصورة رقم 2</label>
+                    <div class="input-group">
+                        <input id="slide2_img" type="file" class="form-control rounded-0" placeholder="رفع صورة"
+                            (change)="handleFileInput($event.target.files, 2)">
+                        <input type="hidden" name="fileHidden" formControlName="slide2_img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row text-right">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="slide3_title">عنوان الصورة رقم 3</label>
+                    <div class="input-group">
+                        <input id="slide3_title" type="text" class="form-control rounded-0"
+                            placeholder="ادخل اسم الموقع" formControlName="slide3_title">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="slide3_desc">وصف قصير عن الصورة رقم 3</label>
+                    <div class="input-group">
+                        <input id="slide3_desc" type="text" class="form-control rounded-0" placeholder="ادخل اسم المنتج"
+                            formControlName="slide3_desc">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="slide3_img">رفع الصورة رقم 3</label>
+                    <div class="input-group">
+                        <input id="slide3_img" type="file" class="form-control rounded-0" placeholder="رفع صورة"
+                            (change)="handleFileInput($event.target.files, 3)">
+                        <input type="hidden" name="fileHidden" formControlName="slide3_img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col text-center">
+                <button type="submit" class="btn btn-outline-primary rounded-0 btn-lg">حفظ البيانات</button>
+            </div>
+        </div>
+    </form>
+</div>
+<ngx-spinner [fullScreen]="false" type="ball-spin-clockwise" size="medium"></ngx-spinner>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-user-data">تعديل بياناتى</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body text-right" dir="rtl">
+        <form [formGroup]="userForm">
+            <div class="form-group">
+                <label for="username">اسم المستخدم</label>
+                <div class="input-group">
+                    <input id="username" type="text" class="form-control" placeholder="اسم المستخدم"
+                        formControlName="username">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pass">كلمة المرور</label>
+                <div class="input-group">
+                    <input type="text" id="pass" class="form-control" formControlName="password"
+                        placeholder="كلمة المرور" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-outline-primary rounded-0 px-5"
+            (click)="modal.close('Save click')">حفظ</button>
+    </div>
+</ng-template>
+
+
+<admin-copyright></admin-copyright>
+
+
+

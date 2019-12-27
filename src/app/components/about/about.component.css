@@ -1,0 +1,62 @@
+.header {
+     position: relative;
+     display: -ms-flexbox;
+     display: flex;
+     -ms-flex-wrap: wrap;
+     flex-wrap: wrap;
+     -ms-flex-direction: column;
+     flex-direction: column;
+     -ms-flex-pack: center;
+     justify-content: center;
+     min-height: 350px;
+     padding-top: 4rem;
+     padding-bottom: 4rem;
+     color: #fff;
+     background-color: #607D8B;
+     text-align: center
+}
+
+h1 {
+     font-size: 3.5rem;
+     font-weight: 300;
+     line-height: 1.1;
+}
+
+.header h1 a {
+     color: #fff;
+     text-decoration: none;
+}
+
+.header p {
+     letter-spacing: 1px;
+}
+
+.about-title h1 {
+     color: #535353;
+     font-size: 45px;
+     font-weight: 600;
+}
+
+.about-title span {
+     color: #007bff;
+     font-size: 45px;
+     font-weight: 700;
+}
+
+.about-title h3 {
+     color: #535353;
+     font-size: 23px;
+     margin-bottom: 24px;
+}
+
+.about-title p {
+     color: #7a7a7a;
+     line-height: 1.8;
+     margin: 0 0 15px;
+}
+
+.about-paddingB {
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+     padding-bottom: 12px;
+}

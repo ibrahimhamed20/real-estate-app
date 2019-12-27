@@ -1,0 +1,80 @@
+<app-header [hideSlider]="1"></app-header>
+<div class="section" id="b-section-header" name="Header">
+    <div class="widget Header" data-version="2" id="Header1">
+        <div class="header image-placement-behind no-image">
+            <div class="container">
+                <h1><a>{{productDetails?.name}}</a></h1>
+                <p>بواسطة <strong>{{productDetails?.owner_name}}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" dir="rtl">
+    <div class="card bg-white">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+
+                    <div class="preview-pic tab-content">
+                        <div class="tab-pane active" id="pic-1"><img class="img-thumbnail" src="{{productDetails?.main_image}}" /></div>
+                        <div class="tab-pane" id="pic-2"><img class="img-thumbnail" src="{{productDetails?.img_temp1}}" /></div>
+                        <div class="tab-pane" id="pic-3"><img class="img-thumbnail" src="{{productDetails?.img_temp2}}" /></div>
+                        <div class="tab-pane" id="pic-4"><img class="img-thumbnail" src="{{productDetails?.img_temp3}}" /></div>
+                    </div>
+                    <ul class="preview-thumbnail nav nav-tabs p-0 row">
+                        <li class="col active">
+                            <a data-target="#pic-1" data-toggle="tab">
+                                <img class="img-thumbnail" src="{{productDetails?.main_image}}" />
+                            </a>
+                        </li>
+                        <li class="col">
+                            <a data-target="#pic-2" data-toggle="tab">
+                                <img class="img-thumbnail" src="{{productDetails?.img_temp1}}" />
+                            </a>
+                        </li>
+                        <li class="col">
+                            <a data-target="#pic-3" data-toggle="tab">
+                                <img class="img-thumbnail" src="{{productDetails?.img_temp2}}" />
+                            </a>
+                        </li>
+                        <li class="col">
+                            <a data-target="#pic-4" data-toggle="tab">
+                                <img class="img-thumbnail" src="{{productDetails?.img_temp3}}" />
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="details col-md-6 text-right">
+                    <h3 class="product-title">{{productDetails?.name}}</h3>
+                    <div class="rating">
+                        <div class="stars">
+                            <ngb-rating [(rate)]="currentRate">
+                                <ng-template let-fill="fill" let-index="index">
+                                    <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                                </ng-template>
+                            </ngb-rating>
+                        </div>
+                        <span class="review-no">{{currentRate}} نجوم</span>
+                    </div>
+                    <p class="product-description">
+                        {{productDetails?.long_desc}}
+                    </p>
+
+                    <h4 class="price">السعر الحالى: <span>{{productDetails?.price}}</span> ريال سعودي</h4>
+
+                    <p class="vote"><strong>العنوان: </strong>{{productDetails?.address}}</p>
+
+                    <h5 class="sizes">المعلن: {{productDetails?.owner_name}}</h5>
+                    <h5 class="my-3 pb-3">رقم الهاتف للتواصل: {{productDetails?.owner_phone}}</h5>
+
+                    <p class="lead"><b>تاريخ الاعلان: </b>{{productDetails?.created_at | date:'fullDate'}}</p>
+                    <div class="action">
+                        <button class="btn btn-outline-info btn-lg rounded-0 px-4" (click)="gotoAllProducts()" type="button">عودة لقائمة العقارات</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

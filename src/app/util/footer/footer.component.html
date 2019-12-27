@@ -1,0 +1,32 @@
+<br><br>
+<!-- footer -->
+<footer dir="rtl">
+     <div class="container">
+          <div class="row">
+               <div class="col-md-4 col-sm-12 depts">
+                    <h3 class="my-2">الأقسام الرئيسية</h3>
+                    <p *ngFor="let link of links" class="my-3"><a [routerLink]="[link.route]">{{link.link}}</a></p>
+               </div>
+               <div class="col-md-4 col-sm-12 column">
+                    <h2 class="my-2">{{about.title}}</h2>
+                    <p>{{about.desc}}</p>
+                    <a href="https://www.facebook.com/abukady1441" target="_blank" class="mx-2 facebook" style="border: 1px solid #fff;padding: 5px;border-radius: 50%;"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                    <a href="https://twitter.com/yDdELu06H6jyvdG" target="_blank" class="mx-2 twitter" style="border: 1px solid #fff;padding: 5px;border-radius: 50%;"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+
+               </div>
+               <div class="col-md-4 col-sm-12 column tags">
+                    <h2 class="my-2">كلمات مفتاحية</h2>
+                    <span *ngFor="let tag of tags">{{tag.name}}</span>
+               </div>
+          </div>
+     </div>
+     <div class="copyright">
+          <div class="container">
+               <div class="row">
+                    <div class="col-sm-12" [innerHTML]="htmlstring">
+                    </div>
+               </div>
+          </div>
+     </div>
+</footer>
+<!-- /.footer -->

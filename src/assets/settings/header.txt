@@ -1,0 +1,17 @@
+[
+     {
+          "main_data": {
+               "site_title": "مدونة العقارات",
+               "logo": "https://eqarat.eg-1.com/assets/img/logo.png",
+               "phone": "<a href='tel:053-527-3101' target='_blank'>053<span class='text-danger'>527</span>3101</a><img src='https://eqarat.eg-1.com/assets/img/call.png' width='40' height='35' />",
+               "head": "نسعد بخدمتـــكم على مدار اليوم"
+          },
+          "header_links": {
+               "link1": "الرئيسية",
+               "link2": "عقاراتنا",
+               "link3": "المقالات",
+               "link4": "من نحن",
+               "link5": "اتصل بنا"
+          }
+     }
+]
